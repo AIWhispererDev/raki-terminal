@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #050505;
+  color: #ff3333;
+  @apply font-mono;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@keyframes glitch-tear {
+  0% {
+    filter: url('#cyber-glitch');
+    transform: translate(2px, -2px);
+    text-shadow: 3px 0 0 rgba(0, 255, 255, 0.9), -3px 0 0 rgba(255, 0, 0, 0.9);
+    color: #cccccc;
+    background-color: transparent;
+  }
+  25% {
+    filter: url('#cyber-glitch');
+    transform: translate(-3px, 1px);
+    text-shadow: -4px 0 0 rgba(0, 255, 255, 0.9), 4px 0 0 rgba(255, 0, 0, 0.9);
+  }
+  50% {
+    filter: none;
+    transform: translate(1px, -1px);
+    text-shadow: 2px 0 0 rgba(0, 255, 255, 0.5), -2px 0 0 rgba(255, 0, 0, 0.5);
+    color: black;
+    background-color: #ff0000;
+  }
+  100% {
+    filter: none;
+    transform: translate(0, 0);
+    text-shadow: none;
+    color: black;
+    background-color: #ff0000;
+  }
+}
+
+.glitch-hover {
+  position: relative;
+  transition: none !important;
+}
+
+.glitch-hover:hover {
+  animation: glitch-tear 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  font-weight: bold !important;
+}
+
